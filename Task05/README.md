@@ -1,46 +1,50 @@
-# Task05
+# Task05 · Task 5 · Currency converter listeners
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Enter 1000 INR/USD and bad as an invalid amount. Compare original/changed requirements and four listener strategies.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![todo valid conversion](screenshots/todo_valid_conversion.png)
 
-```powershell
-java -cp build Converter
-java -cp build ConverterStyles lambda
-```
+![compilation success](screenshots/compilation_success.png)
 
-- [gui-run.txt](evidence/gui-run.txt)
+![Converter code](screenshots/Converter_code.png)
 
-## Genuine execution captures
+<details>
+<summary>More captures</summary>
 
-![anonymous invalid dialog](evidence/anonymous_invalid_dialog.png)
+![anonymous invalid dialog](screenshots/anonymous_invalid_dialog.png)
 
-![anonymous original](evidence/anonymous_original.png)
+![anonymous original](screenshots/anonymous_original.png)
 
-![anonymous valid dialog](evidence/anonymous_valid_dialog.png)
+![anonymous valid dialog](screenshots/anonymous_valid_dialog.png)
 
-![frame invalid dialog](evidence/frame_invalid_dialog.png)
+![Converter code main](screenshots/Converter_code_main.png)
 
-![frame original](evidence/frame_original.png)
+![ConverterStyles code](screenshots/ConverterStyles_code.png)
 
-![frame valid dialog](evidence/frame_valid_dialog.png)
+![ConverterStyles code main](screenshots/ConverterStyles_code_main.png)
 
-![lambda invalid dialog](evidence/lambda_invalid_dialog.png)
+![frame invalid dialog](screenshots/frame_invalid_dialog.png)
 
-![lambda original](evidence/lambda_original.png)
+![frame original](screenshots/frame_original.png)
 
-![lambda valid dialog](evidence/lambda_valid_dialog.png)
+![frame valid dialog](screenshots/frame_valid_dialog.png)
 
-![named invalid dialog](evidence/named_invalid_dialog.png)
+![lambda invalid dialog](screenshots/lambda_invalid_dialog.png)
 
-![named original](evidence/named_original.png)
+![lambda original](screenshots/lambda_original.png)
 
-![named valid dialog](evidence/named_valid_dialog.png)
+![lambda valid dialog](screenshots/lambda_valid_dialog.png)
 
-![todo invalid amount](evidence/todo_invalid_amount.png)
+![named invalid dialog](screenshots/named_invalid_dialog.png)
 
-![todo launch](evidence/todo_launch.png)
+![named original](screenshots/named_original.png)
 
-![todo valid conversion](evidence/todo_valid_conversion.png)
+![named valid dialog](screenshots/named_valid_dialog.png)
+
+![todo invalid amount](screenshots/todo_invalid_amount.png)
+
+![todo launch](screenshots/todo_launch.png)
+
+</details>

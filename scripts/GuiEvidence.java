@@ -54,7 +54,7 @@ public final class GuiEvidence {
             }
         }
         if (!variation) throw new AssertionError("Uniform capture surface");
-        Path evidence = Paths.get(task, "evidence");
+        Path evidence = Paths.get(System.getProperty("csa09.gui.capture", ""), task, "screenshots");
         Files.createDirectories(evidence);
         ImageIO.write(image, "png", evidence.resolve(filename + ".png").toFile());
         return image;
@@ -129,11 +129,20 @@ public final class GuiEvidence {
         capture(frame, "Task04", "launch");
         Point base = edt(frame::getLocationOnScreen);
         int[][] points = {{80, 95}, {152, 136}, {235, 100}};
-        for (int[] position : points) {
-            robot.mouseMove(base.x + position[0], base.y + position[1]);
-            robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
-            robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-            robot.delay(120);
+        for (int index = 0; index < points.length; index++) {
+            int[] position = points[index];
+            String expectedLabel = "Clicks: " + (index + 1);
+            BooleanSupplier recorded = () -> Arrays.stream(frame.getComponents()).filter(c -> c instanceof Label)
+                    .anyMatch(c -> ((Label)c).getText().equals(expectedLabel));
+            for (int attempt = 0; attempt < 3 && !edt(recorded::getAsBoolean); attempt++) {
+                robot.mouseMove(base.x + position[0], base.y + position[1]);
+                robot.delay(70);
+                robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+                robot.delay(75);
+                robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+                robot.delay(180);
+            }
+            if (!edt(recorded::getAsBoolean)) throw new AssertionError("Robot click not recorded: " + expectedLabel);
         }
         BufferedImage before = capture(frame, "Task04", "dots_before_minimize");
         ui(() -> frame.setState(Frame.ICONIFIED));

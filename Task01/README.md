@@ -1,29 +1,28 @@
-# Task01
+# Task01 · Task 1 · Fee window
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Registration 90001 and INR 150.50. Empty ID, malformed amounts, clear and receipt.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![successful payment](screenshots/successful_payment.png)
 
-```powershell
-java -cp build FeeServiceTest
-java -cp build FeeWindow
-```
+![compilation success](screenshots/compilation_success.png)
 
-- [gui-run.txt](evidence/gui-run.txt)
-- [service.txt](evidence/service.txt)
+![FeeServiceTest code](screenshots/FeeServiceTest_code.png)
 
-## Genuine execution captures
+<details>
+<summary>More captures</summary>
 
-![compilation success](evidence/compilation_success.png)
+![FeeServiceTest run](screenshots/FeeServiceTest_run.png)
 
-![FeeServiceTest run](evidence/FeeServiceTest_run.png)
+![FeeWindow code](screenshots/FeeWindow_code.png)
 
-![invalid registration](evidence/invalid_registration.png)
+![FeeWindow code main](screenshots/FeeWindow_code_main.png)
 
-![launch](evidence/launch.png)
+![invalid registration](screenshots/invalid_registration.png)
 
-![receipt dialog](evidence/receipt_dialog.png)
+![launch](screenshots/launch.png)
 
-![successful payment](evidence/successful_payment.png)
+![receipt dialog](screenshots/receipt_dialog.png)
+
+</details>

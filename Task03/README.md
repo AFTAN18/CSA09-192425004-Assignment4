@@ -1,21 +1,22 @@
-# Task03
+# Task03 · Task 3 · Adaptive library layout
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Search Java, select Effective Java, reserve, resize to 480×280, 640×370 and 820×500.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![library 640x370](screenshots/library_640x370.png)
 
-```powershell
-java -cp build LibrarySearch
-```
+![compilation success](screenshots/compilation_success.png)
 
-- [gui-run.txt](evidence/gui-run.txt)
+![LibrarySearch code](screenshots/LibrarySearch_code.png)
 
-## Genuine execution captures
+<details>
+<summary>More captures</summary>
 
-![library 480x280](evidence/library_480x280.png)
+![library 480x280](screenshots/library_480x280.png)
 
-![library 640x370](evidence/library_640x370.png)
+![library 820x500](screenshots/library_820x500.png)
 
-![library 820x500](evidence/library_820x500.png)
+![LibrarySearch code main](screenshots/LibrarySearch_code_main.png)
+
+</details>

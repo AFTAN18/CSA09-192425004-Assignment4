@@ -1,30 +1,30 @@
-# Task06
+# Task06 · Task 6 · Campus event registration
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Synthetic name and numeric identifier, invalid empty request, duplicate same event, Dance filter and CSV export.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![successful registration](screenshots/successful_registration.png)
 
-```powershell
-java -cp "build;PATH_TO_CONNECTOR_JAR" RegistrationDesk
-```
+![compilation success](screenshots/compilation_success.png)
 
-- [gui-run.txt](evidence/gui-run.txt)
-- [paging-export.txt](evidence/paging-export.txt)
+![RegistrationDesk code](screenshots/RegistrationDesk_code.png)
 
-## Genuine execution captures
+<details>
+<summary>More captures</summary>
 
-![csv export success](evidence/csv_export_success.png)
+![csv export success](screenshots/csv_export_success.png)
 
-![database page](evidence/database_page.png)
+![database page](screenshots/database_page.png)
 
-![duplicate registration](evidence/duplicate_registration.png)
+![duplicate registration](screenshots/duplicate_registration.png)
 
-![event filter](evidence/event_filter.png)
+![event filter](screenshots/event_filter.png)
 
-![invalid registration](evidence/invalid_registration.png)
+![invalid registration](screenshots/invalid_registration.png)
 
-![second page](evidence/second_page.png)
+![RegistrationDesk code main](screenshots/RegistrationDesk_code_main.png)
 
-![successful registration](evidence/successful_registration.png)
+![second page](screenshots/second_page.png)
+
+</details>

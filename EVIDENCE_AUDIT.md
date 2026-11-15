@@ -1,18 +1,14 @@
 # Evidence audit · Assignment 4
 
-Aftan Faiz · 192425004
+6 tasks. 61 genuine PNGs, including 20 added in this audit.
 
-6 of 6 tasks meet the technical evidence checklist. 41 genuine PNGs are present.
+| Task and captures | Result | Local PNGs |
+|---|---|---:|
+| [Task01](Task01/README.md) | Passed | 9 |
+| [Task02](Task02/README.md) | Passed | 7 |
+| [Task03](Task03/README.md) | Passed | 6 |
+| [Task04](Task04/README.md) | Passed | 9 |
+| [Task05](Task05/README.md) | Passed | 20 |
+| [Task06](Task06/README.md) | Passed | 10 |
 
-| Task | Java program filename | Compilation | Execution | Output verification | PNG count | Screenshot filenames | Missing requirements | Final status |
-|---|---|---|---|---|---:|---|---|---|
-| Task01 | [source/FeeServiceTest.java](Task01/source/FeeServiceTest.java)<br>[source/FeeWindow.java](Task01/source/FeeWindow.java) | Passed | Executed | Checks and captured outputs match | 6 | [compilation_success.png](Task01/evidence/compilation_success.png), [FeeServiceTest_run.png](Task01/evidence/FeeServiceTest_run.png), [invalid_registration.png](Task01/evidence/invalid_registration.png), [launch.png](Task01/evidence/launch.png), [receipt_dialog.png](Task01/evidence/receipt_dialog.png), [successful_payment.png](Task01/evidence/successful_payment.png) | None | COMPLETE |
-| Task02 | [source/AppointmentDesk.java](Task02/source/AppointmentDesk.java) | Passed | Executed | Checks and captured outputs match | 4 | [confirm_close_during_booking.png](Task02/evidence/confirm_close_during_booking.png), [invalid_patient.png](Task02/evidence/invalid_patient.png), [launch.png](Task02/evidence/launch.png), [successful_booking.png](Task02/evidence/successful_booking.png) | None | COMPLETE |
-| Task03 | [source/LibrarySearch.java](Task03/source/LibrarySearch.java) | Passed | Executed | Checks and captured outputs match | 3 | [library_480x280.png](Task03/evidence/library_480x280.png), [library_640x370.png](Task03/evidence/library_640x370.png), [library_820x500.png](Task03/evidence/library_820x500.png) | None | COMPLETE |
-| Task04 | [source/DrawPad.java](Task04/source/DrawPad.java)<br>[variants/no-annotation/DrawPad.java](Task04/variants/no-annotation/DrawPad.java)<br>[variants/with-annotation/DrawPad.java](Task04/variants/with-annotation/DrawPad.java) | Passed; expected failure captured | Executed | Expected annotated compile failure | 6 | [compiler_rejection.png](Task04/evidence/compiler_rejection.png), [dots_after_restore.png](Task04/evidence/dots_after_restore.png), [dots_before_minimize.png](Task04/evidence/dots_before_minimize.png), [launch.png](Task04/evidence/launch.png), [misspelled_callback_output.png](Task04/evidence/misspelled_callback_output.png), [misspelling_compiles.png](Task04/evidence/misspelling_compiles.png) | None | COMPLETE |
-| Task05 | [source/Converter.java](Task05/source/Converter.java)<br>[source/ConverterStyles.java](Task05/source/ConverterStyles.java) | Passed | Executed | Checks and captured outputs match | 15 | [anonymous_invalid_dialog.png](Task05/evidence/anonymous_invalid_dialog.png), [anonymous_original.png](Task05/evidence/anonymous_original.png), [anonymous_valid_dialog.png](Task05/evidence/anonymous_valid_dialog.png), [frame_invalid_dialog.png](Task05/evidence/frame_invalid_dialog.png), [frame_original.png](Task05/evidence/frame_original.png), [frame_valid_dialog.png](Task05/evidence/frame_valid_dialog.png), [lambda_invalid_dialog.png](Task05/evidence/lambda_invalid_dialog.png), [lambda_original.png](Task05/evidence/lambda_original.png), [lambda_valid_dialog.png](Task05/evidence/lambda_valid_dialog.png), [named_invalid_dialog.png](Task05/evidence/named_invalid_dialog.png), [named_original.png](Task05/evidence/named_original.png), [named_valid_dialog.png](Task05/evidence/named_valid_dialog.png), [todo_invalid_amount.png](Task05/evidence/todo_invalid_amount.png), [todo_launch.png](Task05/evidence/todo_launch.png), [todo_valid_conversion.png](Task05/evidence/todo_valid_conversion.png) | None | COMPLETE |
-| Task06 | [source/RegistrationDesk.java](Task06/source/RegistrationDesk.java) | Passed | Executed | Checks and captured outputs match | 7 | [csv_export_success.png](Task06/evidence/csv_export_success.png), [database_page.png](Task06/evidence/database_page.png), [duplicate_registration.png](Task06/evidence/duplicate_registration.png), [event_filter.png](Task06/evidence/event_filter.png), [invalid_registration.png](Task06/evidence/invalid_registration.png), [second_page.png](Task06/evidence/second_page.png), [successful_registration.png](Task06/evidence/successful_registration.png) | None | COMPLETE |
-
-The command-run PNGs are captures of the execution viewer displaying real child-process output and exit status. The Assignment 4 application PNGs capture real top-level AWT/Swing windows. CSV and text captures provide the complete records where the visible output is sampled.
-
-See [environment details](report/TestEnvironment.md) and [the written report](report/AssignmentReport.md).
+Source PNGs show the actual Java files in an editor. Console PNGs show child-process output. GUI PNGs show the running application windows.

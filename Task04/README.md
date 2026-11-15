@@ -1,30 +1,28 @@
-# Task04
+# Task04 · Task 4 · Draw pad forensics
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Three mouse clicks on the canvas followed by iconification and restore. With and without @Override on misspelling.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![dots after restore](screenshots/dots_after_restore.png)
 
-```powershell
-java -cp build DrawPad
-```
+![DrawPad code](screenshots/DrawPad_code.png)
 
-- [gui-run.txt](evidence/gui-run.txt)
-- [misspelled-callback.txt](evidence/misspelled-callback.txt)
-- [no-annotation-compile.txt](evidence/no-annotation-compile.txt)
-- [override-compiler-error.txt](evidence/override-compiler-error.txt)
+<details>
+<summary>More captures</summary>
 
-## Genuine execution captures
+![compiler rejection](screenshots/compiler_rejection.png)
 
-![compiler rejection](evidence/compiler_rejection.png)
+![dots before minimize](screenshots/dots_before_minimize.png)
 
-![dots after restore](evidence/dots_after_restore.png)
+![DrawPad no-annotation code](screenshots/DrawPad_no-annotation_code.png)
 
-![dots before minimize](evidence/dots_before_minimize.png)
+![DrawPad with-annotation code](screenshots/DrawPad_with-annotation_code.png)
 
-![launch](evidence/launch.png)
+![launch](screenshots/launch.png)
 
-![misspelled callback output](evidence/misspelled_callback_output.png)
+![misspelled callback output](screenshots/misspelled_callback_output.png)
 
-![misspelling compiles](evidence/misspelling_compiles.png)
+![misspelling compiles](screenshots/misspelling_compiles.png)
+
+</details>

@@ -1,24 +1,24 @@
-# Task02
+# Task02 · Task 2 · Hospital appointment desk
 
-[Written answers](ANSWERS.md) · [Test input](input/README.md)
+[Full answer](ANSWERS.md) · [Inputs](input/README.md) · [Logs and measurements](evidence)
 
-Empty or P100 patient ID, switch General to Dental, select the doctor and reserve 09:00.
+## Screenshots
 
-Build with the [repository instructions](../README.md), then execute from that repository root.
+![successful booking](screenshots/successful_booking.png)
 
-```powershell
-java -cp build AppointmentDesk
-```
+![compilation success](screenshots/compilation_success.png)
 
-- [close-confirmation.txt](evidence/close-confirmation.txt)
-- [gui-run.txt](evidence/gui-run.txt)
+![AppointmentDesk code](screenshots/AppointmentDesk_code.png)
 
-## Genuine execution captures
+<details>
+<summary>More captures</summary>
 
-![confirm close during booking](evidence/confirm_close_during_booking.png)
+![AppointmentDesk code main](screenshots/AppointmentDesk_code_main.png)
 
-![invalid patient](evidence/invalid_patient.png)
+![confirm close during booking](screenshots/confirm_close_during_booking.png)
 
-![launch](evidence/launch.png)
+![invalid patient](screenshots/invalid_patient.png)
 
-![successful booking](evidence/successful_booking.png)
+![launch](screenshots/launch.png)
+
+</details>
