@@ -1,0 +1,5 @@
+12345 paid INR 100.50
+Rejected '': Enter a valid amount with up to two decimals
+Rejected '-1': Amount outside allowed range
+Rejected '1.234': Enter a valid amount with up to two decimals
+Rejected 'abc': Enter a valid amount with up to two decimals
