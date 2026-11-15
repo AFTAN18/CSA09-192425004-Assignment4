@@ -2,7 +2,7 @@
 
 Aftan Faiz · 192425004 · CO4
 
-GitHub repository link pending verification.
+GitHub repository [CSA09-192425004-Assignment4](https://github.com/AFTAN18/CSA09-192425004-Assignment4).
 
 ## Task 1 · Fee window
 
