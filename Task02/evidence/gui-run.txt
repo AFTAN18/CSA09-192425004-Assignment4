@@ -4,3 +4,4 @@ refreshDoctors
 bookingCompleted
 windowClosing
 Appointments: department refresh, rejection, booking and window close verified.
+windowClosed

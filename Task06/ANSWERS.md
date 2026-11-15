@@ -47,3 +47,5 @@ Validation belongs in the service. The database UNIQUE constraint resolves races
 ## 5. Verification and alternatives
 
 Try valid numeric ID/name, missing name or nonnumeric ID, then submit the same ID/event pair again. The correct outcomes are one saved row, validation failure and duplicate-key feedback. An all-at-once model stores and transfers O(n) rows including 100,000 in the stated scenario. It can keep SQL on a worker, but publishing a huge model on the EDT can stall interaction. Paging holds O(p) rows for page size p, with O(p) client transfer per query. An indexed range uses approximately O(log n + offset + p) database work because offset rows can still be visited. Deep pagination can use the last ID as a cursor. Export intentionally handles the full selected result. For bounded driver buffering, enable Connector/J cursor fetching in the URL and use the positive fetch size.
+
+The second desktop run inserted 30 additional synthetic Quiz records. It verified the 25-row first page, the second page and Previous, then invoked File > Export CSV, approved the real chooser and compared the written row count.

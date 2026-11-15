@@ -1,3 +1,3 @@
-windowClosed
 Library 480x280 -> results 462x119, Reserve 81x26
 Library 640x370 -> results 622x209, Reserve 81x26
+Library 820x500 -> results 802x339, Reserve 81x26

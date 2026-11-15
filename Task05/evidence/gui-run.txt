@@ -1,1 +1,1 @@
-Draw Pad: 3 Robot clicks and raster pixels verified after real minimize/restore.
+Converter: supplied TODO and four listener variants verified for valid and invalid input.

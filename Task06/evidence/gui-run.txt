@@ -1,1 +1,1 @@
-Converter: supplied TODO and four listener variants verified for valid and invalid input.
+Registration: live MySQL valid, invalid, duplicate, filter and CSV export verified.

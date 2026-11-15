@@ -90,8 +90,18 @@ public final class GuiEvidence {
         await(() -> frame.status.getText().startsWith("Confirmed"), "Appointment completion");
         if (!edt(() -> frame.doctor.getSelectedItem().equals("Dr Khan"))) throw new AssertionError();
         capture(frame, "Task02", "successful_booking");
+        ui(() -> {
+            frame.slot.setSelectedItem("10:30");
+            frame.book.doClick();
+            EventQueue.invokeLater(() -> frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING)));
+        });
+        JDialog confirmation = dialog(frame);
+        capture(confirmation, "Task02", "confirm_close_during_booking");
+        ui(confirmation::dispose);
+        if (!edt(frame::isShowing)) throw new AssertionError("Closing confirmation disposed the main window");
+        await(() -> frame.book.isEnabled(), "Second booking");
         ui(() -> frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING)));
-        System.out.println("Appointments: department refresh, rejection, booking and window close verified.");
+        System.out.println("Appointments: department refresh, rejection, booking, close confirmation and cancellation verified.");
     }
 
     private static void library() throws Exception {
@@ -222,20 +232,74 @@ public final class GuiEvidence {
         await(() -> frame.status.getText().equals("Page 1"), "Filtered page");
         if (!edt(() -> frame.table.getRowCount() > 0 && frame.table.getValueAt(0, 2).equals("Dance"))) throw new AssertionError();
         capture(frame, "Task06", "event_filter");
-        Path exported = Files.createTempFile("registration-fixture", ".csv");
+        for (int i = 0; i < 30; i++) service.register(id + (100 + i), "Quiz fixture " + i, "Quiz");
+        ui(() -> frame.filter.setSelectedItem("Quiz"));
+        await(() -> frame.next.isEnabled(), "First quiz page");
+        if (!edt(() -> frame.table.getRowCount() == RegistrationDesk.PAGE)) throw new AssertionError("First page size");
+        ui(() -> frame.next.doClick());
+        await(() -> frame.status.getText().equals("Next page"), "Second quiz page");
+        if (!edt(() -> frame.prev.isEnabled() && frame.table.getRowCount() > 0
+                && frame.table.getRowCount() <= RegistrationDesk.PAGE)) throw new AssertionError("Second page controls");
+        capture(frame, "Task06", "second_page");
+        ui(() -> frame.prev.doClick());
+        await(() -> frame.status.getText().equals("Previous page"), "Return to first page");
+        Path exportDir = Files.createTempDirectory("registration-fixture");
+        Path exported = exportDir.resolve("quiz.csv");
         try {
-            int rows = service.export("Dance", exported);
-            if (rows == 0 || Files.readAllLines(exported, StandardCharsets.UTF_8).size() != rows + 1) throw new AssertionError();
-        } finally { Files.deleteIfExists(exported); }
+            ui(() -> EventQueue.invokeLater(() -> frame.getJMenuBar().getMenu(0).getItem(0).doClick()));
+            JDialog picker = dialog(frame);
+            JFileChooser chooser = edt(() -> findChooser(picker));
+            if (chooser == null) throw new AssertionError("File menu did not open a save chooser");
+            ui(() -> { chooser.setSelectedFile(exported.toFile()); chooser.approveSelection(); });
+            await(() -> frame.status.getText().startsWith("Exported "), "CSV export");
+            int rows = Integer.parseInt(edt(() -> frame.status.getText().split(" ")[1]));
+            if (rows < 30 || Files.readAllLines(exported, StandardCharsets.UTF_8).size() != rows + 1) {
+                throw new AssertionError("Export result mismatch");
+            }
+            capture(frame, "Task06", "csv_export_success");
+        } finally { Files.deleteIfExists(exported); Files.deleteIfExists(exportDir); }
         ui(frame::dispose);
-        System.out.println("Registration: live MySQL valid, invalid, duplicate, filter and CSV export verified.");
+        System.out.println("Registration: MySQL valid, invalid, duplicate, filter, next/previous and File menu CSV export verified.");
+    }
+
+    private static void drawMisspelling() throws Exception {
+        DrawPad frame = edt(() -> display(new DrawPad()));
+        Point base = edt(frame::getLocationOnScreen);
+        robot.mouseMove(base.x + 170, base.y + 105);
+        robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
+        robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+        robot.delay(150);
+        if (!edt(() -> Arrays.stream(frame.getComponents()).filter(c -> c instanceof Label)
+                .anyMatch(c -> ((Label)c).getText().equals("Clicks: 0")))) {
+            throw new AssertionError("Expected misspelled callback to leave count unchanged");
+        }
+        capture(frame, "Task04", "misspelled_callback_output");
+        ui(frame::dispose);
+        System.out.println("Misspelled callback compiled without annotation. A real click left the count at zero.");
+    }
+    private static JFileChooser findChooser(Container parent) {
+        for (Component child : parent.getComponents()) {
+            if (child instanceof JFileChooser) return (JFileChooser) child;
+            if (child instanceof Container) {
+                JFileChooser found = findChooser((Container) child);
+                if (found != null) return found;
+            }
+        }
+        return null;
     }
 
     public static void main(String[] args) throws Exception {
         if (GraphicsEnvironment.isHeadless()) throw new IllegalStateException("Desktop unavailable");
         robot = new Robot();
         try {
-            fee(); appointments(); library(); draw(); converter(); registration();
+            if (args.length == 1 && args[0].equals("audit-extra")) {
+                appointments();
+                registration();
+            } else if (args.length == 1 && args[0].equals("misspelling")) {
+                drawMisspelling();
+            } else {
+                fee(); appointments(); library(); draw(); converter(); registration();
+            }
         } finally {
             ui(() -> { for (Window window : Window.getWindows()) window.dispose(); });
         }

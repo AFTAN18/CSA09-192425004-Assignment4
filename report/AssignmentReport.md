@@ -157,5 +157,5 @@ Try valid numeric ID/name, missing name or nonnumeric ID, then submit the same I
 - [x] Six task folders and answers.
 - [x] Compiled all applications and ran the GUI evidence harness.
 - [x] Verified three library sizes, draw-pad repaint and four converter styles.
-- [x] Exercised registration against disposable MySQL.
-- [x] Saved genuine desktop screenshots and execution logs.
+- [x] Exercised registration, next/previous paging and the File-menu export against disposable MySQL.
+- [x] Saved genuine desktop screenshots, including appointment close confirmation and the inert misspelled draw-pad callback.

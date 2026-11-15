@@ -1,0 +1,1 @@
+Misspelled callback compiled without annotation. A real click left the count at zero.

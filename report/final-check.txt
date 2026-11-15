@@ -1,0 +1,10 @@
+12345 paid INR 100.50
+Rejected '': Enter a valid amount with up to two decimals
+Rejected '-1': Amount outside allowed range
+Rejected '1.234': Enter a valid amount with up to two decimals
+Rejected 'abc': Enter a valid amount with up to two decimals
+Task04\variants\with-annotation\DrawPad.java:21: error: method does not override or implement a method from a supertype
+            @Override public void mouseclicked(MouseEvent e) {
+            ^
+1 error
+Assignment 4 check process exit code: 0

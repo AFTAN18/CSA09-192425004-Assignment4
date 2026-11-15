@@ -1,0 +1,9 @@
+refreshDoctors
+windowOpened
+refreshDoctors
+bookingCompleted
+windowClosing
+bookingCompleted
+windowClosing
+Appointments: department refresh, rejection, booking, close confirmation and cancellation verified.
+windowClosed

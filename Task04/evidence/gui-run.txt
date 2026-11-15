@@ -1,1 +1,1 @@
-Library 820x500 -> results 802x339, Reserve 81x26
+Draw Pad: 3 Robot clicks and raster pixels verified after real minimize/restore.
